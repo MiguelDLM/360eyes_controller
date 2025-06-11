@@ -1,0 +1,14 @@
+{
+    "domain": "ptz_camera",
+    "name": "PTZ for YOOSEE, YCC365, Y05 and IPC365",
+    "config_flow": false,
+    "documentation": "https://github.com/carvalr/PTZ-YALL",
+    "requirements": [],
+    "dependencies": [],
+    "codeowners": [
+        "@fjramirez1987",
+        "@carvalr",
+        "@wire67"
+      ],
+    "version": "1.0.5"
+}
