@@ -1,14 +1,12 @@
 {
     "domain": "ptz_camera",
-    "name": "PTZ for YOOSEE, YCC365, Y05 and IPC365",
+    "name": "PTZ for IPC365/360Eye camera",
     "config_flow": false,
-    "documentation": "https://github.com/carvalr/PTZ-YALL",
+    "documentation": "https://github.com/MiguelDLM/360eyes_controller",
     "requirements": [],
     "dependencies": [],
     "codeowners": [
-        "@fjramirez1987",
-        "@carvalr",
-        "@wire67"
+        "@MiguelDLM"
       ],
-    "version": "1.0.5"
+    "version": "1.0.0"
 }
