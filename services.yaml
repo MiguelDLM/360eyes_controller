@@ -1,164 +1,132 @@
 move_to_direction:
-  # Description of the service
-  description: "Move the camera to the requested direction."
-  # Different fields that your service accepts
+  description: "Move the camera in the specified direction."
   fields:
-    # Key of the field
-    direction:
-      description: "Direction where the camera will be moved to."
-      example: "Down"
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365, Y05, and IPC365"
-      example: "IPC365"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
+    camera_type:
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
+    direction:
+      description: "Direction to move the camera."
+      example: "left"
+      required: true
+      selector:
+        select:
+          options:
+            - "left"
+            - "right"
+            - "up"
+            - "down"
     move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
+      description: "Duration of camera movement in seconds."
+      example: 0.5
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10
+          step: 0.1
+          unit_of_measurement: "s"
 
 move_left:
-  # Description of the service
   description: "Move the camera to the left."
-  # Different fields that your service accepts
   fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365, Y05, and IPC365"
-      example: "IPC365"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
+    camera_type:
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
     move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
+      description: "Duration of camera movement in seconds."
+      example: 0.5
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10
+          step: 0.1
+          unit_of_measurement: "s"
 
 move_right:
-  # Description of the service
   description: "Move the camera to the right."
-  # Different fields that your service accepts
   fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365, Y05, and IPC365"
-      example: "IPC365"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
+    camera_type:
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
     move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
+      description: "Duration of camera movement in seconds."
+      example: 0.5
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10
+          step: 0.1
+          unit_of_measurement: "s"
 
 move_up:
-  # Description of the service
-  description: "Move the camera to the up."
-  # Different fields that your service accepts
+  description: "Move the camera upward."
   fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365 and Y05"
-      example: "Y05"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
+    camera_type:
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
     move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
+      description: "Duration of camera movement in seconds."
+      example: 0.5
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10
+          step: 0.1
+          unit_of_measurement: "s"
 
 move_down:
-  # Description of the service
-  description: "Move the camera to the down."
-  # Different fields that your service accepts
+  description: "Move the camera downward."
   fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365 and Y05"
-      example: "Y05"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
+    camera_type:
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
     move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
+      description: "Duration of camera movement in seconds."
+      example: 0.5
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10
+          step: 0.1
+          unit_of_measurement: "s"
 
-move_origin:
-  # Description of the service
-  description: "Move the camera to the origin."
-  # Different fields that your service accepts
+stop:
+  description: "Stop any camera movement immediately."
   fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365 and Y05"
-      example: "Y05"
     host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
-    pan_time:
-      description: "Panning time of the camera. In seconds."
-      example: 4
-    tilt_time:
-      description: "Tilt time of the camera. In seconds."
-      example: 1
-    pan:
-      description: "Value from -1 to 1"
-      example: 0.1
-    tilt:
-      description: "Value from -1 to 1"
-      example: 0.1
-    move_steps:
-      description: "Quantity of moves until reaching the desired destination"
-      example: 60
-    move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
-
-move_privacy:
-  # Description of the service
-  description: "Move the camera to a privacy position."
-  # Different fields that your service accepts
-  fields:
-    # Key of the field
+      description: "IP address of the IPC365/360Eye camera. Required."
+      example: "192.168.1.68"
+      required: true
     camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365 and Y05"
-      example: "Y05"
-    host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
-    move_steps:
-      description: "Quantity of moves until reaching the desired destination"
-      example: 60
-    move_time:
-      description: "Duration time of camera movement. Optional."
-      example: 0.3
-
-move_to_preset:
-  # Description of the service
-  description: "Move the camera to the origin."
-  # Different fields that your service accepts
-  fields:
-    # Key of the field
-    camera_type:
-      description: "Type of the camera to be controlled. Options: YOOSEE, YCC365 and Y05"
-      example: "Y05"
-    host:
-      # Description of the field
-      description: "Local ip address of the camera (without http: //). Required."
-      # Example value that can be passed for this field
-      example: "192.168.0.XX"
-    preset_token:
-      description: "Token ID to be used by Onvif service"
-      example: "Preset2"
+      description: "Type of camera to control. Use 'IPC365' for IPC365/360Eye cameras."
+      example: "IPC365"
+      required: true
